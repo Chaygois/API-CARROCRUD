@@ -6,8 +6,10 @@ const bodyParser = require ('body-parser');
 const routes = require ('../src/routes');
 
 const server = express ();
+server.use(bodyParser.json())
 server.use (
-    '/api' , routes);
+    '/api'
+    , routes);
 
 server.use(cors ());
 server.use(bodyParser.urlencoded({extend:false}));
